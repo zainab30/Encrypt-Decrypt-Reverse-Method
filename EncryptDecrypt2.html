@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lobster');
+        @import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
+        .show {
+            visibility: visible;
+            width: 444px;
+            height: 152px;
+            font-family: lobster;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .none {
+            visibility: hidden;
+        }
+
+        .position {
+            text-align: center;
+        }
+
+        #hide {
+            visibility: hidden;
+            border-radius: 10px;
+            background-color: aqua;
+            box-shadow: 2px 2px 2px black;
+            padding: 3px;
+            margin: 5px;
+        }
+
+        #hid {
+            visibility: hidden;
+            border-radius: 10px;
+            background-color: aqua;
+            box-shadow: 2px 2px 2px black;
+            padding: 3px;
+            margin: 5px;
+        }
+
+
+
+        .btn1 {
+            border-radius: 10px;
+            background-color: aqua;
+            box-shadow: 2px 2px 2px black;
+            padding: 3px;
+            margin: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        .e {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="position">
+        <button class="btn1 " id="btn1" onclick="enter();">Enter Message</button>
+    </div>
+    <div class="position">
+        <textarea class="none e" id="none" placeholder="Enter Message To Encrypt"></textarea>
+    </div>
+    <div class="position">
+        <input type="submit" id="hide" value="Encrypt" onclick="encrypt();" />
+        <input type="submit" id="hid" value="Decrypt" onclick="decrypt();" />
+    </div>
+</body>
+<script>
+
+    function enter() {
+
+        var hidden = document.getElementById('btn1').className += 'hidden';
+        var display = document.getElementById('none').className = 'show';
+        document.getElementById('hide').style.visibility = "visible";
+        document.getElementById('hid').style.visibility = "visible";
+
+    }
+
+    function encrypt() {
+
+        var msg = document.getElementById('none').value;
+        console.log(msg);
+        var msg1 = msg.toLowerCase();
+        console.log(msg);
+        var val = "";
+
+        for (var i = msg1.length - 1; i >= 0; i--) {
+            val += msg1[i];
+            console.log(val);
+            document.getElementById('none').value = val;
+        }
+
+        return val;
+
+    }
+
+    function decrypt(){
+
+        var msg = document.getElementById('none').value;
+        console.log(msg);
+        var msg1 = msg.toLowerCase();
+        console.log(msg);
+        var val = "";
+
+        for (var i = msg1.length - 1; i >= 0; i--) {
+            val += msg1[i];
+            console.log(val);
+            document.getElementById('none').value = val;
+        }
+
+        return val;
+
+    }
+
+
+
+</script>
